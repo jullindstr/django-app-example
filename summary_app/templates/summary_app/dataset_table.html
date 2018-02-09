@@ -1,0 +1,34 @@
+{% load summary_extras %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = 'utf-8'>
+	<title> Datasets table </title>
+  </head>
+  <body>
+    <p>There are {{ datasets|length}} datasets in the database.</p>
+    <h4> List of datasets: </h4>
+	 {% if datasets %}
+         <ol>
+          {% for ds in datasets %}
+		  
+	     <li> Dataset: {{ ds }}
+              <ul>
+				     
+	          <li> Data Center: {{ ds.data_center }}</li>
+		  <li>ISOtopic category: {{ds.ISO_topic_category}} </li>
+		  <li> Source: {{ ds.source }} </li>
+		  <li> Minimum latitude: {{ds.geographic_location.geometry.coords|min_lat}}
+		  <li> Maximum latitude: {{ds.geographic_location.geometry.coords|max_lat}}
+		  <li> Minimum longitude: {{ds.geographic_location.geometry.coords|min_long}}
+		  <li> Maximum longitude: {{ds.geographic_location.geometry.coords|max_long}}
+	
+              </ul>
+          {% endfor %}
+	 </ol>
+	 {%else%}
+	 <p> There are no data sets available in the database.</p>
+	 {%endif%}
+	</body>
+</html>
