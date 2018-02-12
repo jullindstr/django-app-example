@@ -7,28 +7,23 @@
 	<title> Datasets table </title>
   </head>
   <body>
-    <p>There are {{ datasets|length}} datasets in the database.</p>
-    <h4> List of datasets: </h4>
-	 {% if datasets %}
-         <ol>
-          {% for ds in datasets %}
-		  
-	     <li> Dataset: {{ ds }}
-              <ul>
+   
+    <h4> {{dataset}}</h4>
+        <ul>
 				     
-	          <li> Data Center: {{ ds.data_center }}</li>
-		  <li>ISOtopic category: {{ds.ISO_topic_category}} </li>
-		  <li> Source: {{ ds.source }} </li>
-		  <li> Minimum latitude: {{ds.geographic_location.geometry.coords|min_lat}}
-		  <li> Maximum latitude: {{ds.geographic_location.geometry.coords|max_lat}}
-		  <li> Minimum longitude: {{ds.geographic_location.geometry.coords|min_long}}
-		  <li> Maximum longitude: {{ds.geographic_location.geometry.coords|max_long}}
+	          <li> Data Center: {{ dataset.data_center }}</li>
+		  <li>ISOtopic category: {{dataset.ISO_topic_category}} </li>
+		  <li> Source: {{ dataset.source }} </li>
+		  <li> Minimum latitude: {{dataset.geographic_location.geometry.coords|min_lat}}
+		  <li> Maximum latitude: {{dataset.geographic_location.geometry.coords|max_lat}}
+		  <li> Minimum longitude: {{dataset.geographic_location.geometry.coords|min_long}}
+		  <li> Maximum longitude: {{dataset.geographic_location.geometry.coords|max_long}}
 	
-              </ul>
-          {% endfor %}
-	 </ol>
-	 {%else%}
-	 <p> There are no data sets available in the database.</p>
-	 {%endif%}
+        </ul>
+		
+		<p> Go back: <a href="/summary_app/{{ds.id}}/"> {{ds}} </a> </p> 
+         
+	 
+	 
 	</body>
 </html>
