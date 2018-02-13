@@ -7,16 +7,14 @@
 	<title> List of datasets </title>
   </head>
   <body>
-    <p>There are <b> {{ datasets|length}} datasets <b> in the database.</p>
+    <p>There are <b> {{ datasets|length}} datasets </b> in the database.</p>
     <h4> List of datasets: </h4>
 	 {% if datasets %}
-         <ol>
-          {% for ds in datasets %}
-		  
-	     <li> <a href="/summary_app/{{ds.id}}/"> {{ds}} </a> </li>
+           {% for ds in datasets %}
+	
+               <li> <a href="{%url 'dataset_table' ds.id%}">{{ds}} </a></li>
             
-          {% endfor %}
-	 </ol>
+           {% endfor %}
 	 {%else%}
 	 <p> There are no datasets available in the database.</p>
 	 {%endif%}

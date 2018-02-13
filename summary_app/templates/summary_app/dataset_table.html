@@ -7,23 +7,16 @@
 	<title> Datasets table </title>
   </head>
   <body>
-   
     <h4> {{dataset}}</h4>
         <ul>
-				     
-	          <li> Data Center: {{ dataset.data_center }}</li>
-		  <li>ISOtopic category: {{dataset.ISO_topic_category}} </li>
-		  <li> Source: {{ dataset.source }} </li>
-		  <li> Minimum latitude: {{dataset.geographic_location.geometry.coords|min_lat}}
-		  <li> Maximum latitude: {{dataset.geographic_location.geometry.coords|max_lat}}
-		  <li> Minimum longitude: {{dataset.geographic_location.geometry.coords|min_long}}
-		  <li> Maximum longitude: {{dataset.geographic_location.geometry.coords|max_long}}
-	
+	      <li> Data Center: {{ dataset.data_center }}</li>
+              <li>ISOtopic category: {{dataset.ISO_topic_category}} </li>
+	      <li> Source: {{ dataset.source }} </li>
+	      <li> Minimum latitude: {{dataset.geographic_location.geometry.coords|min_lat}}
+	      <li> Maximum latitude: {{dataset.geographic_location.geometry.coords|max_lat}}
+	      <li> Minimum longitude: {{dataset.geographic_location.geometry.coords|min_long}}
+	      <li> Maximum longitude: {{dataset.geographic_location.geometry.coords|max_long}}
         </ul>
-		
-		<p> Go back: <a href="/summary_app/{{ds.id}}/"> {{ds}} </a> </p> 
-         
-	 
-	 
-	</body>
+
+  </body>
 </html>
