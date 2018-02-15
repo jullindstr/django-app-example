@@ -16,7 +16,8 @@
 	      <li> Maximum latitude: {{dataset.geographic_location.geometry.coords|max_lat}}
 	      <li> Minimum longitude: {{dataset.geographic_location.geometry.coords|min_long}}
 	      <li> Maximum longitude: {{dataset.geographic_location.geometry.coords|max_long}}
-        </ul>
+		  <li> <a href="{%url 'output_json' dataset.id%}">{{dataset}} </a></li>
+		</ul>
 
   </body>
 </html>
